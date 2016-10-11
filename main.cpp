@@ -124,6 +124,13 @@ int main(int nargs, char** vargs)
 		time_it(insertionSort, out);
 	}
 
+	for (size_t i = 0; i < sizes.size(); ++i)
+	{
+		std::cout << "Tim Pre-Sort: " << sizes[i] << ": ";
+		copyPart(out, unsorted, sizes[i]);
+		time_it(timSort, out);
+	}
+
 	write_file("output.txt", out);
 
 	return 0;
